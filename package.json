@@ -4,7 +4,12 @@
   "description": "移除上线前代码的babel plugin",
   "main": "index.js",
   "scripts": {
-    "xianzao-cli": "xianzao-cli"
+    "xianzao-cli": "xianzao-cli",
+    "prepare": "husky install",
+    "pre-commit": "lint-staged",
+    "postinstallmac": "git config core.hooksPath .husky && chmod 700 .husky/*",
+    "eslint": "eslint --cache --max-warnings 0  \"index.{js,ts}\" --fix",
+    "commit": "git add . && git-cz"
   },
   "repository": {
     "type": "git",
@@ -21,7 +26,36 @@
     "url": "https://github.com/xianzao/remove-debugger-plugin/issues"
   },
   "homepage": "https://github.com/xianzao/remove-debugger-plugin#readme",
-  "dependencies": {
+  "devDependencies": {
+    "@commitlint/cli": "^17.0.3",
+    "@commitlint/config-angular": "^17.0.3",
+    "@commitlint/cz-commitlint": "^17.0.3",
+    "commitizen": "^4.2.4",
+    "cz-customizable": "^6.9.0",
+    "eslint": "^7.25.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-friendly-formatter": "^4.0.1",
+    "eslint-plugin-html": "^6.2.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-vue": "^9.6.0",
+    "husky": "^8.0.1",
+    "inquirer": "^8.0.0",
+    "lint-staged": "^12.4.1",
+    "prettier": "^2.7.1",
     "xianzao-cli": "^1.0.7"
+  },
+  "lint-staged": {
+    "*.{js,ts}": [
+      "npm run eslint"
+    ],
+    "*.{js,jsx,ts,tsx,md,html,css,lees,scss,sass}": "prettier --write"
+  },
+  "config": {
+    "commitizen": {
+      "path": "@commitlint/cz-commitlint"
+    }
+  },
+  "dependencies": {
+    "babel-eslint": "^10.1.0"
   }
 }
