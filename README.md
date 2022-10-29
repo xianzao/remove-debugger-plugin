@@ -160,7 +160,3 @@ console.log(result)
 ## NPM
 
 项目已自动更新至 NPM，请移步至[remove-debugger-plugin](https://www.npmjs.com/package/remove-debugger-plugin)
-
-```
-
-```
