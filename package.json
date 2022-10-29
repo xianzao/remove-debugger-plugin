@@ -1,0 +1,27 @@
+{
+  "name": "remove-debugger-plugin",
+  "version": "1.0.0",
+  "description": "移除上线前代码的babel plugin",
+  "main": "index.js",
+  "scripts": {
+    "xianzao-cli": "xianzao-cli"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xianzao/remove-debugger-plugin.git"
+  },
+  "keywords": [
+    "babel",
+    "plugin",
+    "xianzao"
+  ],
+  "author": "xianzao",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xianzao/remove-debugger-plugin/issues"
+  },
+  "homepage": "https://github.com/xianzao/remove-debugger-plugin#readme",
+  "dependencies": {
+    "xianzao-cli": "^1.0.7"
+  }
+}
